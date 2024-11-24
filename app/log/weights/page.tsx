@@ -1,3 +1,4 @@
+import HealthScoreCarousel from "@/components/health-score-carousel";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -12,6 +13,9 @@ import { PlusIcon } from "@radix-ui/react-icons";
 export default function LogWeightsPage() {
   return (
     <main>
+      <section className="p-8">
+        <HealthScoreCarousel />
+      </section>
       <Sheet>
         <SheetTrigger>
           <Button variant={"outline"} asChild>

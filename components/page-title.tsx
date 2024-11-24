@@ -6,7 +6,7 @@ export default function PageTitle({
   className,
 }: {
   children: ReactNode;
-  className: string;
+  className?: string;
 }) {
   return (
     <h1 className={cn("text-3xl font-medium text-center", className)}>

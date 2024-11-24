@@ -6,7 +6,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "./ui/card";
-import { Gauge } from "@mui/x-charts/Gauge";
+import { Gauge, gaugeClasses } from "@mui/x-charts/Gauge";
 
 const data = [
   {
@@ -37,7 +37,16 @@ export default function HealthScoreCarousel() {
               <h2 className="text-center">{info.time}</h2>
               <Card>
                 <CardContent className="flex aspect-square items-center justify-center p-2">
-                  <Gauge value={info.score} cornerRadius="50%" />
+                  <Gauge
+                    value={info.score}
+                    cornerRadius="50%"
+                    sx={{
+                      [`& .${gaugeClasses.valueText}`]: {
+                        fontSize: 40,
+                        color: "red",
+                      },
+                    }}
+                  />
                 </CardContent>
               </Card>
             </div>
