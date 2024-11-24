@@ -1,3 +1,4 @@
+import HealthScoreCarousel from "@/components/health-score-carousel";
 import Navbar from "@/components/navbar";
 
 export default function Home() {
