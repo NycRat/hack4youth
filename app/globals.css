@@ -9,7 +9,9 @@
 }
 
 main {
-  @apply m-10;
+  @apply p-10;
+  min-height: 100vh;
+  position: relative;
 }
 
 @layer base {
