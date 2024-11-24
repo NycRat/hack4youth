@@ -51,12 +51,12 @@ export default function Navbar() {
         <AvahNavItem href="/data">
           <BarChartIcon />
         </AvahNavItem>
-        <AvahNavItem href="/config">
-          <GearIcon />
-        </AvahNavItem>
-        {/* <NavigationMenuItem> */}
-        {/*   <ThemeToggleButton /> */}
-        {/* </NavigationMenuItem> */}
+        {/* <AvahNavItem href="/config"> */}
+        {/*   <GearIcon /> */}
+        {/* </AvahNavItem> */}
+        <NavigationMenuItem>
+          <ThemeToggleButton />
+        </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
   );
