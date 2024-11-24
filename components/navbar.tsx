@@ -40,7 +40,7 @@ function AvahNavItem({
 
 export default function Navbar() {
   return (
-    <NavigationMenu className="absolute bottom-0 left-1/2 -translate-x-1/2 p-2 bg-stone-50 w-screen">
+    <NavigationMenu className="fixed bottom-0 left-1/2 -translate-x-1/2 p-2 w-screen bg-stone-50 dark:bg-black">
       <NavigationMenuList>
         <AvahNavItem href="/">
           <PersonIcon />
