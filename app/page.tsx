@@ -20,7 +20,7 @@ export default function Home() {
               },
             }}
           />
-          <h2>Today's Health Score</h2>
+          <h2>Today&apos;s Health Score</h2>
         </div>
       </section>
       {/* <HealthScoreCarousel /> */}
