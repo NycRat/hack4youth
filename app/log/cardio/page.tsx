@@ -4,7 +4,6 @@ import PageTitle from "@/components/page-title";
 import { Button } from "@/components/ui/button";
 import {
   Drawer,
-  DrawerClose,
   DrawerContent,
   DrawerDescription,
   DrawerHeader,
@@ -12,7 +11,6 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { BikeIcon, FootprintsIcon, RabbitIcon } from "lucide-react";
-import Link from "next/link";
 
 const activities = [
   { name: "walking", icon: <FootprintsIcon /> },

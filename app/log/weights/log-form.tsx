@@ -81,7 +81,7 @@ export default function LogForm() {
               <FormField
                 key={i}
                 control={form.control}
-                // @ts-ignore
+                // @ts-expect-error
                 name={`set-${i}`}
                 render={({ field }) => (
                   <FormItem>
