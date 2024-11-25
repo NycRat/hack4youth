@@ -7,7 +7,7 @@ export default function DataPage() {
       <PageTitle>Your Progress</PageTitle>
       <DataChart category="cardio" />
       <DataChart category="weights" />
-      <DataChart category="nutrients" />
+      {/* <DataChart category="nutrients" /> */}
     </main>
   );
 }

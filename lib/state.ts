@@ -6,6 +6,9 @@ const defaultState = {
 
 // TODO make this global state system better
 export function getGlobalState(key: string): any {
+  if (!localStorage) {
+    return [];
+  }
   const state = localStorage.getItem(key);
   if (state == null) {
     setGlobalState(key, defaultState["cardio"]);
