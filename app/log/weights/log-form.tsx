@@ -32,11 +32,11 @@ export default function LogForm() {
 
   // 2. Define a submit handler.
   function onSubmit(values: z.infer<typeof formSchema>) {
-    const cardioInfo = getGlobalState("cardio");
+    const cardioInfo = getGlobalState("weights");
     const date = new Date().toISOString().split("T")[0];
 
     cardioInfo.push({ datetime: date, ...values });
-    setGlobalState("cardio", cardioInfo);
+    setGlobalState("weights", cardioInfo);
   }
 
   return (

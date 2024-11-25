@@ -1,5 +1,5 @@
 import HealthScoreCarousel from "@/components/health-score-carousel";
-import LogForm from "@/components/log-form";
+import LogForm from "@/app/log/cardio/log-form";
 import PageTitle from "@/components/page-title";
 import { Button } from "@/components/ui/button";
 import {
