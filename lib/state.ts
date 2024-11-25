@@ -6,7 +6,7 @@ const defaultState = {
 
 // TODO make this global state system better
 export function getGlobalState(key: string): any {
-  if (!localStorage) {
+  if (typeof window === "undefined") {
     return [];
   }
   const state = localStorage.getItem(key);
