@@ -27,7 +27,11 @@ const data = [
   },
 ];
 
-export default function HealthScoreCarousel() {
+export default function HealthScoreCarousel({
+  category,
+}: {
+  category?: string;
+}) {
   return (
     <Carousel className="w-4/5 max-w-xs m-auto">
       <CarouselContent>
