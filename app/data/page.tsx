@@ -1,5 +1,3 @@
-"use client";
-
 import DataChart from "@/components/data-chart";
 import PageTitle from "@/components/page-title";
 

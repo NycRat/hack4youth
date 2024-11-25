@@ -1,5 +1,3 @@
-"use client";
-
 import { calculateOverallHealthScore } from "@/lib/utils";
 import { Gauge, gaugeClasses } from "@mui/x-charts/Gauge";
 
