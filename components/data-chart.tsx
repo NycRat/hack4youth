@@ -10,7 +10,7 @@ export default function DataChart({ category }: { category: string }) {
   return (
     <Card>
       <CardContent>
-        <ChartContainer config={chartConfig} className="min-h-[150px] w-full">
+        <ChartContainer config={chartConfig} className="min-h-[200px] w-full">
           <BarChart accessibilityLayer data={chartData}>
             <CartesianGrid vertical={false} />
             <XAxis
@@ -41,7 +41,6 @@ export default function DataChart({ category }: { category: string }) {
               </>
             )}
           </BarChart>
-          <div className="text-center">{category}</div>
         </ChartContainer>
       </CardContent>
     </Card>
