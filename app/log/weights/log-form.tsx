@@ -18,17 +18,16 @@ import { useToast } from "@/hooks/use-toast";
 import { getGlobalState, setGlobalState } from "@/lib/state";
 
 const formSchema = z.object({
-  distance: z.number(),
-  duration: z.number(),
+  exercise: z.string(),
+  "set-1": z.number(),
+  "set-2": z.number(),
+  "set-3": z.number(),
 });
 
 export default function LogForm() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
-      distance: 5,
-      duration: 5,
-    },
+    defaultValues: {},
   });
 
   // 2. Define a submit handler.
@@ -45,40 +44,46 @@ export default function LogForm() {
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
         <FormField
           control={form.control}
-          name="distance"
+          name="exercise"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Distance (meters)</FormLabel>
+              <FormLabel>Exercise</FormLabel>
               <FormControl>
-                <Input
-                  placeholder="1000, 5000, etc.."
-                  type="number"
-                  {...field}
-                  onChange={(event) => field.onChange(+event.target.value)}
-                />
+                <Input placeholder="pushups, pullups, etc.." {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
-        <FormField
-          control={form.control}
-          name="duration"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Duration (minutes)</FormLabel>
-              <FormControl>
-                <Input
-                  placeholder="15, 60, etc.."
-                  type="number"
-                  {...field}
-                  onChange={(event) => field.onChange(+event.target.value)}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+        <br />
+        Sets
+        <div className="space-y-2">
+          {[1, 2, 3].map((i) => {
+            return (
+              <FormField
+                key={i}
+                control={form.control}
+                // @ts-ignore
+                name={`set-${i}`}
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input
+                        placeholder="(reps)"
+                        type="number"
+                        {...field}
+                        onChange={(event) =>
+                          field.onChange(+event.target.value)
+                        }
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            );
+          })}
+        </div>
         <Button type="submit">Submit</Button>
       </form>
     </Form>

@@ -23,10 +23,10 @@ const activities = [
 export default function LogWeightsPage() {
   return (
     <main className="h-[calc(100svh-52px)]">
-      <PageTitle className="p-4">your cardio</PageTitle>
+      <PageTitle className="p-4">Your Cardio</PageTitle>
       <div className="grid grid-rows-2">
         <section className="p-8">
-          <HealthScoreCarousel />
+          <HealthScoreCarousel category="cardio" />
         </section>
         <section className="grid grid-rows-3">
           {activities.map((activity) => (
