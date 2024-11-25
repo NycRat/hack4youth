@@ -1,4 +1,5 @@
-import HealthScoreCarousel from "@/components/health-score-carousel";
+"use client";
+
 import { calculateOverallHealthScore } from "@/lib/utils";
 import { Gauge, gaugeClasses } from "@mui/x-charts/Gauge";
 

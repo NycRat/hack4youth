@@ -19,6 +19,7 @@ import { getGlobalState, setGlobalState } from "@/lib/state";
 
 const formSchema = z.object({
   exercise: z.string(),
+  rpe: z.number().gt(0).lt(11),
   "set-1": z.number(),
   "set-2": z.number(),
   "set-3": z.number(),
@@ -50,6 +51,23 @@ export default function LogForm() {
               <FormLabel>Exercise</FormLabel>
               <FormControl>
                 <Input placeholder="pushups, pullups, etc.." {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="rpe"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>RPE</FormLabel>
+              <FormControl>
+                <Input
+                  placeholder="0-10"
+                  {...field}
+                  onChange={(event) => field.onChange(+event.target.value)}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>

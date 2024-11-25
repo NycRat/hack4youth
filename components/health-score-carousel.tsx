@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Carousel,
   CarouselContent,
@@ -7,31 +9,38 @@ import {
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "./ui/card";
 import { Gauge, gaugeClasses } from "@mui/x-charts/Gauge";
-
-const data = [
-  {
-    time: "Today",
-    score: 50,
-  },
-  {
-    time: "This Week",
-    score: 75,
-  },
-  {
-    time: "This Month",
-    score: 80,
-  },
-  {
-    time: "All Time",
-    score: 70,
-  },
-];
+import { calculateCardioScore, calculateWeightsScore } from "@/lib/utils";
 
 export default function HealthScoreCarousel({
   category,
 }: {
   category?: string;
 }) {
+  const data = [
+    {
+      time: "Today",
+      score: calculateWeightsScore(),
+    },
+    {
+      time: "This Week",
+      score: 75,
+    },
+    {
+      time: "This Month",
+      score: 80,
+    },
+    {
+      time: "All Time",
+      score: 70,
+    },
+  ];
+
+  if (category == "weights") {
+    data[0].score = calculateWeightsScore();
+  } else if (category == "cardio") {
+    data[0].score = calculateCardioScore();
+  }
+
   return (
     <Carousel className="w-4/5 max-w-xs m-auto">
       <CarouselContent>

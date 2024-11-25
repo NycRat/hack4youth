@@ -10,7 +10,7 @@ export default function DataChart({ category }: { category: string }) {
   return (
     <Card>
       <CardContent>
-        <ChartContainer config={chartConfig} className="min-h-[200px] w-full">
+        <ChartContainer config={chartConfig} className="min-h-[150px] w-full">
           <BarChart accessibilityLayer data={chartData}>
             <CartesianGrid vertical={false} />
             <XAxis
@@ -27,9 +27,21 @@ export default function DataChart({ category }: { category: string }) {
               }}
             />
 
-            <Bar dataKey="duration" fill="var(--chart-3)" radius={4} />
-            <Bar dataKey="distance" fill="var(--chart-2)" radius={4} />
+            {category == "weights" ? (
+              <>
+                <Bar dataKey="set-1" fill="var(--chart-3)" radius={4} />
+                <Bar dataKey="set-2" fill="var(--chart-2)" radius={4} />
+                <Bar dataKey="set-3" fill="var(--chart-2)" radius={4} />
+                <Bar dataKey="rpe" fill="var(--chart-2)" radius={4} />
+              </>
+            ) : (
+              <>
+                <Bar dataKey="distance" fill="var(--chart-3)" radius={4} />
+                <Bar dataKey="duration" fill="var(--chart-2)" radius={4} />
+              </>
+            )}
           </BarChart>
+          <div className="text-center">{category}</div>
         </ChartContainer>
       </CardContent>
     </Card>
